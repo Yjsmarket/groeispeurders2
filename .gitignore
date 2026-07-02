@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Editor / tooling
+.vscode/
+.idea/
+
+# Lokale preview-config (niet nodig in de repo)
+.claude/

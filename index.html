@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Groeispeurt — digitaal bureau voor strategie, design en development die jouw merk laat groeien." />
+  <title>Groeispeurt — Digitale strategie & design</title>
+
+  <!-- Google Fonts: Fraunces (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo" aria-label="Groeispeurt home">
+        <svg class="logo__mark" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="14" r="12.5" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="14" cy="14" r="5" fill="currentColor"/>
+          <circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.5"/>
+        </svg>
+        <span class="logo__text">Groeispeurt<span class="logo__dot">.</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Hoofdnavigatie">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="diensten.html" class="nav__link">Diensten
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="dropdown">
+              <a href="diensten.html#google-ads" class="dropdown__link">Google Ads</a>
+              <a href="diensten.html#meta-ads" class="dropdown__link">Meta Ads</a>
+              <a href="diensten.html#creatives" class="dropdown__link">Creatives</a>
+              <a href="diensten.html#websites" class="dropdown__link">Websites</a>
+              <a href="diensten.html#websites" class="dropdown__link">SEO &amp; Performance</a>
+            </div>
+          </li>
+          <li class="nav__item"><a href="#cases" class="nav__link">Portfolio</a></li>
+          <li class="nav__item"><a href="#werkwijze" class="nav__link">Over ons</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn btn--primary header__cta">Kennismaken
+        <span class="btn__arrow" aria-hidden="true">→</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Mobiele navigatie">
+      <a href="diensten.html" class="mobile-menu__link">Diensten</a>
+      <a href="#cases" class="mobile-menu__link">Portfolio</a>
+      <a href="#werkwijze" class="mobile-menu__link">Over ons</a>
+      <a href="#pakketten" class="mobile-menu__link">Pakketten</a>
+      <a href="#contact" class="mobile-menu__link">Contact</a>
+      <a href="#contact" class="btn btn--primary mobile-menu__cta">Kennismaken <span class="btn__arrow" aria-hidden="true">→</span></a>
+    </nav>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+    <!-- ===================== SECTIE 1 — HERO ===================== -->
+    <section class="hero spotlight" id="hero">
+      <div class="hero__rings" aria-hidden="true"></div>
+      <div class="hero__sweep" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <span class="tracker reveal">
+            <span class="tracker__dot" aria-hidden="true"></span>
+            Op het spoor van groei
+            <span class="tracker__coord">52.37&deg;N · 4.90&deg;E</span>
+          </span>
+
+          <h1 class="hero__title reveal">
+            Wij <em>speuren</em> jouw<br>
+            groei <span class="hero__title-accent">op.</span>
+          </h1>
+
+          <p class="hero__subtext reveal">
+            Groeispeurt jaagt op rendement met Google Ads, Meta Ads en scroll-stoppende
+            creatives. We volgen het spoor van elke euro — tot we groei vinden die blijft.
+          </p>
+
+          <div class="hero__actions reveal">
+            <a href="#contact" class="btn btn--primary btn--lg">Zet het spoor uit <span class="btn__arrow" aria-hidden="true">→</span></a>
+            <a href="#cases" class="btn btn--ghost btn--lg">Volg een spoor <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="hero__proof reveal">
+            <span class="hero__proof-num" data-count="50">50</span><span class="hero__proof-plus">+</span>
+            <span class="hero__proof-txt">merken op het spoor gezet<br><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.9</strong> gemiddeld op Google</span>
+          </div>
+        </div>
+
+        <!-- Groei-tracker paneel -->
+        <div class="tracker-panel reveal" aria-hidden="true">
+          <div class="tracker-panel__bar">
+            <span>DOSSIER · GROEISPOOR</span>
+            <span class="tracker-panel__live"><span class="tracker__dot"></span>LIVE</span>
+          </div>
+          <div class="tracker-panel__plot">
+            <svg class="trail" viewBox="0 0 360 220" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="trailFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0D7A57" stop-opacity="0.40"/>
+                  <stop offset="100%" stop-color="#0D7A57" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <g stroke="#1F2A3A" stroke-width="1">
+                <line x1="0" y1="55" x2="360" y2="55"/>
+                <line x1="0" y1="110" x2="360" y2="110"/>
+                <line x1="0" y1="165" x2="360" y2="165"/>
+              </g>
+              <path class="trail__area" d="M14 196 C 78 188, 96 150, 150 138 S 250 96, 300 60 L 346 32 L 346 210 L 14 210 Z" fill="url(#trailFill)"/>
+              <path class="trail__line" pathLength="100" d="M14 196 C 78 188, 96 150, 150 138 S 250 96, 300 60 L 346 32" fill="none" stroke="#19A06B" stroke-width="2.5" stroke-linecap="round"/>
+              <g class="trail__pins">
+                <circle cx="150" cy="138" r="4"/>
+                <circle cx="300" cy="60" r="4"/>
+                <circle cx="346" cy="32" r="5" class="trail__pin--end"/>
+              </g>
+              <circle class="trail__dot" r="5" fill="#ffffff">
+                <animateMotion dur="5s" repeatCount="indefinite" path="M14 196 C 78 188, 96 150, 150 138 S 250 96, 300 60 L 346 32"/>
+              </circle>
+            </svg>
+            <span class="trail__flag trail__flag--1">+38% ROAS</span>
+            <span class="trail__flag trail__flag--2">2.4× omzet</span>
+          </div>
+          <div class="tracker-panel__foot">
+            <div class="tstat"><span class="tstat__v">+182%</span><span class="tstat__l">Omzet</span></div>
+            <div class="tstat"><span class="tstat__v">2.4×</span><span class="tstat__l">ROAS</span></div>
+            <div class="tstat"><span class="tstat__v">−38%</span><span class="tstat__l">CPA</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTIE 2 — LOGO BAR ===================== -->
+    <section class="logos" aria-label="Merken die ons vertrouwen">
+      <div class="container">
+        <p class="logos__title reveal">Merken die we op het spoor van groei zetten</p>
+      </div>
+      <div class="marquee">
+        <div class="marquee__track">
+          <span class="brand">Northwind</span>
+          <span class="brand">Lumen&amp;Co</span>
+          <span class="brand">Veldhuis</span>
+          <span class="brand">Atlas Studio</span>
+          <span class="brand">Maren</span>
+          <span class="brand">Kompas</span>
+          <span class="brand">Greenfield</span>
+          <span class="brand">Orbit</span>
+          <!-- duplicaat voor naadloze loop -->
+          <span class="brand" aria-hidden="true">Northwind</span>
+          <span class="brand" aria-hidden="true">Lumen&amp;Co</span>
+          <span class="brand" aria-hidden="true">Veldhuis</span>
+          <span class="brand" aria-hidden="true">Atlas Studio</span>
+          <span class="brand" aria-hidden="true">Maren</span>
+          <span class="brand" aria-hidden="true">Kompas</span>
+          <span class="brand" aria-hidden="true">Greenfield</span>
+          <span class="brand" aria-hidden="true">Orbit</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTIE 3 — DIENSTEN ===================== -->
+    <section class="section diensten" id="diensten">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal"><span class="eyebrow__bullet"></span>Onze expertise</span>
+          <h2 class="section__title reveal">Wat we voor jou doen</h2>
+          <p class="section__lead reveal">Van Google Ads en Meta Ads tot scroll-stoppende creatives. We laten je groeien op de kanalen die ertoe doen — met een website die converteert wanneer dat nodig is.</p>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Card 1 — Google Ads: animerend dashboard -->
+          <article class="service-card reveal">
+            <div class="service-card__visual">
+              <div class="gads">
+                <div class="gads__stats">
+                  <div class="ministat"><span class="ministat__label">CONVERSIE</span><span class="ministat__val">+28%<i class="trend">▲</i></span></div>
+                  <div class="ministat"><span class="ministat__label">ROAS</span><span class="ministat__val">2.4x<i class="trend">▲</i></span></div>
+                </div>
+                <div class="gads__chart">
+                  <div class="bars" data-anim="bars">
+                    <span class="bar" style="--h:30%;--d:0s"></span>
+                    <span class="bar" style="--h:45%;--d:.1s"></span>
+                    <span class="bar" style="--h:25%;--d:.2s"></span>
+                    <span class="bar" style="--h:60%;--d:.3s"></span>
+                    <span class="bar" style="--h:80%;--d:.4s"></span>
+                    <span class="bar bar--accent" style="--h:100%;--d:.5s"></span>
+                  </div>
+                  <div class="donut" data-anim="donut" data-target="68"><span class="donut__num">0%</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__badge">📈</div>
+              <h3 class="service-card__title">Google Ads</h3>
+              <p class="service-card__desc">Vertoningen omzetten in klanten — meetbaar rendement op elke euro budget.</p>
+              <a href="diensten.html#google-ads" class="link-arrow">Meer info <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Card 2 — Meta Ads: node-graph netwerk -->
+          <article class="service-card reveal">
+            <div class="service-card__visual">
+              <svg class="netgraph" viewBox="0 0 320 220" aria-hidden="true">
+                <g fill="none" stroke="#0A6E4F" stroke-width="1.5">
+                  <line class="nline" style="--d:0s"   pathLength="100" x1="80" y1="110" x2="210" y2="48"/>
+                  <line class="nline" style="--d:.25s" pathLength="100" x1="80" y1="110" x2="278" y2="110"/>
+                  <line class="nline" style="--d:.5s"  pathLength="100" x1="80" y1="110" x2="210" y2="172"/>
+                  <line class="nline" style="--d:.75s" pathLength="100" x1="80" y1="110" x2="150" y2="178"/>
+                </g>
+                <g class="nnode" style="--pd:0s"><circle cx="210" cy="48" r="22" fill="#1877F2"/><text x="210" y="56" text-anchor="middle" font-size="20" font-family="Georgia,serif" font-weight="bold" fill="#fff">f</text></g>
+                <g class="nnode" style="--pd:.4s"><circle cx="278" cy="110" r="22" fill="#E1306C"/><text x="278" y="118" text-anchor="middle" font-size="18">📸</text></g>
+                <g class="nnode" style="--pd:.8s"><circle cx="210" cy="172" r="22" fill="#111111"/><text x="210" y="178" text-anchor="middle" font-size="13" fill="#fff">▶</text></g>
+                <g class="nnode" style="--pd:1.2s"><circle cx="150" cy="178" r="22" fill="#0A6E4F"/><text x="150" y="185" text-anchor="middle" font-size="15">🎯</text></g>
+                <circle cx="80" cy="110" r="28" fill="#fff" stroke="#E2DDD7" stroke-width="1.5"/>
+                <text x="80" y="119" text-anchor="middle" font-size="24">📢</text>
+              </svg>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__badge">📣</div>
+              <h3 class="service-card__title">Meta Ads</h3>
+              <p class="service-card__desc">Adverteren op Facebook en Instagram, van eerste indruk tot slimme retargeting.</p>
+              <a href="diensten.html#meta-ads" class="link-arrow">Meer info <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Card 3 — Creatives: telefoon-mockup met zwevende hartjes -->
+          <article class="service-card reveal">
+            <div class="service-card__visual">
+              <div class="creatives">
+                <div class="phone">
+                  <span class="phone__notch"></span>
+                  <div class="phone__screen">
+                    <span class="phone__play" aria-hidden="true">▶</span>
+                    <div class="phone__bar"><span class="phone__avatar"></span><span class="phone__user">@groeispeurt</span><span class="phone__heart">♥</span></div>
+                  </div>
+                </div>
+                <span class="fheart" style="--x:14px;--delay:0s">♥</span>
+                <span class="fheart" style="--x:58px;--delay:.6s">♥</span>
+                <span class="fheart" style="--x:98px;--delay:1.2s">♥</span>
+                <span class="fheart" style="--x:30px;--delay:1.8s">♥</span>
+                <span class="fheart" style="--x:80px;--delay:2.4s">♥</span>
+                <span class="fheart" style="--x:50px;--delay:3s">♥</span>
+              </div>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__badge">🎬</div>
+              <h3 class="service-card__title">Creatives</h3>
+              <p class="service-card__desc">Scroll-stoppende video's en visuals die blijven hangen én presteren.</p>
+              <a href="diensten.html#creatives" class="link-arrow">Meer info <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Card 4 — Websites: orbit-animatie -->
+          <article class="service-card reveal">
+            <div class="service-card__visual">
+              <div class="orbit">
+                <span class="orbit__path orbit__path--outer"></span>
+                <span class="orbit__path orbit__path--inner"></span>
+                <div class="orbit__center"><strong>UI</strong><span>Design</span></div>
+                <div class="orbit__track">
+                  <span class="orbit__arm" style="--angle:0deg"><span class="orbit__bubble" style="--c:#dbeafe;--t:#1d4ed8">F</span></span>
+                  <span class="orbit__arm" style="--angle:60deg"><span class="orbit__bubble" style="--c:#fee9c7;--t:#b45309">S</span></span>
+                  <span class="orbit__arm" style="--angle:120deg"><span class="orbit__bubble" style="--c:#dcfce7;--t:#15803d">W</span></span>
+                  <span class="orbit__arm" style="--angle:180deg"><span class="orbit__bubble" style="--c:#ffe4e6;--t:#be123c">H</span></span>
+                  <span class="orbit__arm" style="--angle:240deg"><span class="orbit__bubble" style="--c:#e0e7ff;--t:#4338ca">C</span></span>
+                  <span class="orbit__arm" style="--angle:300deg"><span class="orbit__bubble" style="--c:#cffafe;--t:#0e7490">R</span></span>
+                </div>
+              </div>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__badge">🖥️</div>
+              <h3 class="service-card__title">Websites</h3>
+              <p class="service-card__desc">Conversiegerichte sites en landingspagina's die laden én verkopen.</p>
+              <a href="diensten.html#websites" class="link-arrow">Meer info <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Card 5 — Conversie & funnels: notificatie-stroom -->
+          <article class="service-card reveal">
+            <div class="service-card__visual">
+              <div class="notif-stack" id="notifStack">
+                <div class="notif"><span class="notif__icon">🛍️</span><div class="notif__txt"><span class="notif__label">NIEUWE BESTELLING</span><span class="notif__amount">€ 89,00</span></div><span class="notif__time">nu</span></div>
+                <div class="notif"><span class="notif__icon">🛍️</span><div class="notif__txt"><span class="notif__label">NIEUWE BESTELLING</span><span class="notif__amount">€ 149,00</span></div><span class="notif__time">1m</span></div>
+                <div class="notif"><span class="notif__icon">🛍️</span><div class="notif__txt"><span class="notif__label">NIEUWE BESTELLING</span><span class="notif__amount">€ 39,50</span></div><span class="notif__time">3m</span></div>
+                <div class="notif"><span class="notif__icon">🛍️</span><div class="notif__txt"><span class="notif__label">NIEUWE BESTELLING</span><span class="notif__amount">€ 220,00</span></div><span class="notif__time">6m</span></div>
+              </div>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__badge">🛒</div>
+              <h3 class="service-card__title">Conversie &amp; funnels</h3>
+              <p class="service-card__desc">Van klik naar klant — funnels en webshops die bezoekers laten bestellen.</p>
+              <a href="diensten.html#betaalsystemen" class="link-arrow">Meer info <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- Card 6 — SEO & Performance: snelheidsmeter -->
+          <article class="service-card reveal">
+            <div class="service-card__visual">
+              <div class="gaugewrap">
+                <div class="gauge">
+                  <svg class="gauge__svg" viewBox="0 0 200 120" aria-hidden="true">
+                    <path class="gauge__track" d="M16,104 A84,84 0 0 1 184,104"/>
+                    <path class="gauge__fill" data-anim="gauge" data-target="92" pathLength="100" d="M16,104 A84,84 0 0 1 184,104"/>
+                  </svg>
+                  <div class="gauge__num"><span data-gauge-num>0</span></div>
+                  <span class="gauge__label">Performance Score</span>
+                </div>
+                <div class="gauge__chips"><span class="gchip">✓ LCP 1,2s</span><span class="gchip">✓ CLS 0,02</span><span class="gchip">✓ 98 SEO</span></div>
+              </div>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__badge">⚡</div>
+              <h3 class="service-card__title">SEO &amp; Performance</h3>
+              <p class="service-card__desc">Snelle, vindbare sites die hoger scoren in Google én bij bezoekers.</p>
+              <a href="diensten.html#websites" class="link-arrow">Meer info <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTIE 4 — CASES ===================== -->
+    <section class="section section--beige cases" id="cases">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal"><span class="eyebrow__bullet"></span>Cases</span>
+          <h2 class="section__title reveal">Waar strategie en uitvoering samenkomen</h2>
+          <p class="section__lead reveal">Een selectie van projecten waarin we van ambitie naar meetbaar resultaat zijn gegaan.</p>
+        </div>
+
+        <div class="cases-grid">
+          <article class="case-card reveal">
+            <div class="case-card__media">
+              <img src="https://picsum.photos/seed/case1/720/480" alt="Case: Veldhuis Interieur" loading="lazy" />
+            </div>
+            <div class="case-card__body">
+              <div class="tags">
+                <span class="tag">Webdesign</span>
+                <span class="tag">Branding</span>
+              </div>
+              <h3 class="case-card__title">Veldhuis Interieur</h3>
+              <p class="case-card__desc">Een nieuwe digitale etalage voor een ambachtelijk interieurmerk.</p>
+              <span class="stat-pill">+€40K omzet in Q1</span>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-card__media">
+              <img src="https://picsum.photos/seed/case2/720/480" alt="Case: Northwind Outdoor" loading="lazy" />
+            </div>
+            <div class="case-card__body">
+              <div class="tags">
+                <span class="tag">E-commerce</span>
+                <span class="tag">Shopify</span>
+              </div>
+              <h3 class="case-card__title">Northwind Outdoor</h3>
+              <p class="case-card__desc">Een webshop die converteert, met een herkenbaar en rustig merk.</p>
+              <span class="stat-pill">+68% conversie</span>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-card__media">
+              <img src="https://picsum.photos/seed/case3/720/480" alt="Case: Lumen & Co" loading="lazy" />
+            </div>
+            <div class="case-card__body">
+              <div class="tags">
+                <span class="tag">Strategie</span>
+                <span class="tag">Content</span>
+              </div>
+              <h3 class="case-card__title">Lumen &amp; Co</h3>
+              <p class="case-card__desc">Van losse uitingen naar één consistent en krachtig merkverhaal.</p>
+              <span class="stat-pill">2,4× meer leads</span>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-card__media">
+              <img src="https://picsum.photos/seed/case4/720/480" alt="Case: Atlas Studio" loading="lazy" />
+            </div>
+            <div class="case-card__body">
+              <div class="tags">
+                <span class="tag">Performance</span>
+                <span class="tag">SEO</span>
+              </div>
+              <h3 class="case-card__title">Atlas Studio</h3>
+              <p class="case-card__desc">Snellere site, betere vindbaarheid en een sterkere positie online.</p>
+              <span class="stat-pill">−1,8s laadtijd</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__cta reveal">
+          <a href="#contact" class="link-arrow link-arrow--lg">Bekijk alle projecten <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTIE 5 — REVIEWS ===================== -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal"><span class="eyebrow__bullet"></span>Reviews</span>
+          <h2 class="section__title reveal">Wat onze klanten zeggen</h2>
+          <div class="rating-badge reveal">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span><strong>4.9</strong> — beoordeeld door klanten</span>
+          </div>
+        </div>
+
+        <div class="carousel reveal" id="carousel">
+          <div class="carousel__viewport">
+            <div class="carousel__track" id="carouselTrack">
+              <article class="review-card">
+                <div class="review-card__head">
+                  <span class="review-avatar" aria-hidden="true">SM</span>
+                  <div><p class="review-card__name">Sanne Meijer</p><p class="review-card__company">Veldhuis Interieur</p></div>
+                </div>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <p class="review-card__quote">"Rustig, scherp en betrouwbaar. Groeispeurt dacht écht met ons mee en leverde een site die meteen resultaat gaf."</p>
+                <a href="#" class="link-arrow">Lees meer <span aria-hidden="true">→</span></a>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__head">
+                  <span class="review-avatar" aria-hidden="true">TB</span>
+                  <div><p class="review-card__name">Thomas Bakker</p><p class="review-card__company">Northwind Outdoor</p></div>
+                </div>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <p class="review-card__quote">"Onze webshop converteert eindelijk zoals het hoort. Strakke samenwerking en een team dat je vertrouwt."</p>
+                <a href="#" class="link-arrow">Lees meer <span aria-hidden="true">→</span></a>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__head">
+                  <span class="review-avatar" aria-hidden="true">LK</span>
+                  <div><p class="review-card__name">Lotte Kuijpers</p><p class="review-card__company">Lumen &amp; Co</p></div>
+                </div>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <p class="review-card__quote">"Van strategie tot uitvoering klopte alles. Ons merk voelt nu volwassen en onderscheidend."</p>
+                <a href="#" class="link-arrow">Lees meer <span aria-hidden="true">→</span></a>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__head">
+                  <span class="review-avatar" aria-hidden="true">Rde</span>
+                  <div><p class="review-card__name">Rick de Vries</p><p class="review-card__company">Atlas Studio</p></div>
+                </div>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <p class="review-card__quote">"Snelheid, vindbaarheid en design op orde. Precies het premium gevoel dat we zochten."</p>
+                <a href="#" class="link-arrow">Lees meer <span aria-hidden="true">→</span></a>
+              </article>
+
+              <article class="review-card">
+                <div class="review-card__head">
+                  <span class="review-avatar" aria-hidden="true">EJ</span>
+                  <div><p class="review-card__name">Emma Jansen</p><p class="review-card__company">Greenfield</p></div>
+                </div>
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <p class="review-card__quote">"Een bureau dat luistert en levert. We werken er met plezier en vertrouwen mee samen."</p>
+                <a href="#" class="link-arrow">Lees meer <span aria-hidden="true">→</span></a>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel__controls">
+            <button class="carousel__btn" id="prevBtn" aria-label="Vorige review">←</button>
+            <div class="carousel__dots" id="carouselDots" aria-hidden="true"></div>
+            <button class="carousel__btn" id="nextBtn" aria-label="Volgende review">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTIE 6 — UITGELICHTE CASE ===================== -->
+    <section class="section featured spotlight" aria-label="Uitgelichte case study">
+      <div class="grain" aria-hidden="true"></div>
+      <div class="container featured__inner">
+        <div class="featured__media reveal">
+          <img src="https://picsum.photos/seed/featured/760/620" alt="Uitgelichte case: Northwind Outdoor" loading="lazy" />
+        </div>
+        <div class="featured__content reveal">
+          <div class="tags">
+            <span class="tag tag--dark">E-commerce</span>
+            <span class="tag tag--dark">Shopify</span>
+          </div>
+          <h2 class="featured__title">Van idee naar resultaat</h2>
+          <p class="featured__desc">
+            Voor Northwind Outdoor bouwden we een webshop die rust uitstraalt en moeiteloos verkoopt.
+            Strategie, design en techniek kwamen samen in één heldere ervaring.
+          </p>
+          <div class="stats">
+            <div class="stat"><span class="stat__num">+€186K</span><span class="stat__label">omzet jaar 1</span></div>
+            <div class="stat"><span class="stat__num">+68%</span><span class="stat__label">bestellingen</span></div>
+            <div class="stat"><span class="stat__num">41%</span><span class="stat__label">retentie</span></div>
+          </div>
+          <a href="#contact" class="btn btn--primary">Ontdek de case <span class="btn__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTIE 7 — WERKWIJZE ===================== -->
+    <section class="section werkwijze" id="werkwijze">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal"><span class="eyebrow__bullet"></span>Werkwijze</span>
+          <h2 class="section__title reveal">Hoe we samen bouwen</h2>
+          <p class="section__lead reveal">Een doorlooptijd van gemiddeld 4–6 weken, met korte lijnen en heldere stappen.</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline__step reveal">
+            <span class="timeline__badge">Week 1</span>
+            <h3 class="timeline__title">Ontdekken</h3>
+            <p class="timeline__desc">We duiken in je merk, doelen en doelgroep. Scherpe vragen, eerlijke antwoorden.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <span class="timeline__badge">Week 1–2</span>
+            <h3 class="timeline__title">Strategie</h3>
+            <p class="timeline__desc">We bepalen de richting: positionering, structuur en de route naar resultaat.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <span class="timeline__badge">Week 2–6</span>
+            <h3 class="timeline__title">Bouwen</h3>
+            <p class="timeline__desc">Design en development in iteraties, met ruimte voor feedback onderweg.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <span class="timeline__badge">Daarna</span>
+            <h3 class="timeline__title">Live &amp; groeien</h3>
+            <p class="timeline__desc">We lanceren, meten en optimaliseren — zodat groei geen toeval is.</p>
+          </li>
+        </ol>
+
+        <div class="section__cta reveal">
+          <a href="#contact" class="btn btn--primary">Plan een kennismaking <span class="btn__arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTIE 8 — PAKKETTEN ===================== -->
+    <section class="section section--beige pricing" id="pakketten">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal"><span class="eyebrow__bullet"></span>Pakketten</span>
+          <h2 class="section__title reveal">Kies een startpunt dat past bij je ambitie</h2>
+          <p class="section__lead reveal">Transparant en flexibel. We groeien mee met de fase waarin jouw merk zit.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card reveal">
+            <div class="price-card__badge">🌱</div>
+            <h3 class="price-card__name">Starter</h3>
+            <p class="price-card__desc">Voor snelle, compacte websites met impact.</p>
+            <span class="price-card__time">1–2 weken</span>
+            <ul class="price-card__features">
+              <li><span class="check" aria-hidden="true">✓</span> One-page of compacte site</li>
+              <li><span class="check" aria-hidden="true">✓</span> Responsive design</li>
+              <li><span class="check" aria-hidden="true">✓</span> Basis SEO-opzet</li>
+              <li><span class="check" aria-hidden="true">✓</span> Contactformulier</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline price-card__cta">Kies Starter</a>
+          </article>
+
+          <article class="price-card price-card--featured reveal">
+            <span class="price-card__tag">Meest gekozen</span>
+            <div class="price-card__badge price-card__badge--light">🚀</div>
+            <h3 class="price-card__name">Groei</h3>
+            <p class="price-card__desc">Voor bedrijven die willen opschalen.</p>
+            <span class="price-card__time">3–5 weken</span>
+            <ul class="price-card__features">
+              <li><span class="check" aria-hidden="true">✓</span> Meerdere pagina's &amp; CMS</li>
+              <li><span class="check" aria-hidden="true">✓</span> Maatwerk design</li>
+              <li><span class="check" aria-hidden="true">✓</span> Uitgebreide SEO &amp; analytics</li>
+              <li><span class="check" aria-hidden="true">✓</span> Content &amp; copy-ondersteuning</li>
+              <li><span class="check" aria-hidden="true">✓</span> 1 maand nazorg</li>
+            </ul>
+            <a href="#contact" class="btn btn--light price-card__cta">Kies Groei</a>
+          </article>
+
+          <article class="price-card reveal">
+            <div class="price-card__badge">🛠️</div>
+            <h3 class="price-card__name">Maatwerk</h3>
+            <p class="price-card__desc">Voor complexe projecten op maat.</p>
+            <span class="price-card__time">In overleg</span>
+            <ul class="price-card__features">
+              <li><span class="check" aria-hidden="true">✓</span> Webshop of webapplicatie</li>
+              <li><span class="check" aria-hidden="true">✓</span> Integraties &amp; koppelingen</li>
+              <li><span class="check" aria-hidden="true">✓</span> Strategie &amp; campagnes</li>
+              <li><span class="check" aria-hidden="true">✓</span> Doorlopende samenwerking</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline price-card__cta">Plan een gesprek</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTIE 9 — CONTACT / CTA ===================== -->
+    <section class="section contact spotlight" id="contact">
+      <div class="contact__bg" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="container contact__inner">
+        <div class="section__head section__head--light">
+          <span class="eyebrow eyebrow--light reveal"><span class="eyebrow__bullet"></span>Contact</span>
+          <h2 class="section__title section__title--light reveal">Klaar om te starten?</h2>
+          <p class="section__lead section__lead--light reveal">Kies de manier die bij je past. We reageren meestal binnen één werkdag.</p>
+        </div>
+
+        <div class="contact-cards">
+          <a href="#" class="contact-card reveal">
+            <span class="contact-card__icon" aria-hidden="true">📅</span>
+            <h3 class="contact-card__title">Plan een kennismakingsgesprek</h3>
+            <p class="contact-card__desc">Gratis &amp; vrijblijvend, 20–30 minuten.</p>
+            <span class="link-arrow link-arrow--light">Inplannen <span aria-hidden="true">→</span></span>
+          </a>
+          <a href="#" class="contact-card reveal">
+            <span class="contact-card__icon" aria-hidden="true">🔍</span>
+            <h3 class="contact-card__title">Vraag een gratis scan aan</h3>
+            <p class="contact-card__desc">Een eerlijke analyse van je huidige website.</p>
+            <span class="link-arrow link-arrow--light">Aanvragen <span aria-hidden="true">→</span></span>
+          </a>
+          <a href="#" class="contact-card reveal">
+            <span class="contact-card__icon" aria-hidden="true">✨</span>
+            <h3 class="contact-card__title">Start een nieuw project</h3>
+            <p class="contact-card__desc">Vertel ons wat je wilt bouwen.</p>
+            <span class="link-arrow link-arrow--light">Beginnen <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
+
+        <div class="contact__info reveal">
+          <a href="tel:+31201234567" class="contact__info-item">📞 +31 20 123 45 67</a>
+          <a href="mailto:hello@groeispeurt.nl" class="contact__info-item">✉️ hello@groeispeurt.nl</a>
+          <a href="https://wa.me/31612345678" class="contact__info-item">💬 WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTIE 10 — FAQ ===================== -->
+    <section class="section faq" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head">
+          <span class="eyebrow reveal"><span class="eyebrow__bullet"></span>FAQ</span>
+          <h2 class="section__title reveal">Veelgestelde vragen</h2>
+        </div>
+
+        <div class="accordion reveal">
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>Hoe verloopt een traject bij Groeispeurt?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel"><p>We werken in vier fases: ontdekken, strategie, bouwen en live gaan. Je hebt één vast aanspreekpunt en korte feedbackrondes onderweg.</p></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>Wat kost een website ongeveer?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel"><p>Dat hangt af van omvang en ambitie. Onze pakketten starten compact en groeien mee. In een kennismaking geven we snel een eerlijke indicatie.</p></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>Wat is de gemiddelde doorlooptijd?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel"><p>Gemiddeld 4 tot 6 weken, afhankelijk van de complexiteit en hoe snel content en feedback beschikbaar zijn.</p></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>Hoeveel revisierondes zijn inbegrepen?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel"><p>Standaard plannen we twee feedbackrondes per fase in. We sturen liever vaak en klein bij dan in één grote eindronde.</p></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>Bieden jullie onderhoud na livegang?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel"><p>Ja. We bieden onderhoudspakketten voor updates, beveiliging en doorlopende optimalisatie, zodat je site scherp blijft.</p></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>Kan ik de website later zelf beheren?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel"><p>Zeker. We bouwen met een gebruiksvriendelijk CMS en leveren een korte uitleg op, zodat je zelf eenvoudig content kunt aanpassen.</p></div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>Werken jullie ook met bestaande huisstijlen?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel"><p>Jazeker. We respecteren je bestaande merk en scherpen waar nodig aan, of we ontwikkelen een volledig nieuwe identiteit.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#hero" class="logo logo--light">
+          <svg class="logo__mark" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <circle cx="14" cy="14" r="12.5" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="14" cy="14" r="5" fill="currentColor"/>
+          </svg>
+          <span class="logo__text">Groeispeurt<span class="logo__dot">.</span></span>
+        </a>
+        <p class="footer__tagline">Digitale strategie en design die jouw merk laat groeien. Rustig, doordacht en meetbaar.</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn" class="social"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H17.6v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
+          <a href="#" aria-label="Instagram" class="social"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook" class="social"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.29-.04-1.27-.12-2.41-.12-2.39 0-4.03 1.46-4.03 4.14v2.31H7.5V13h2.76v8z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4 class="footer__heading">Over ons</h4>
+          <a href="#werkwijze" class="footer__link">Werkwijze</a>
+          <a href="#cases" class="footer__link">Cases</a>
+          <a href="#reviews" class="footer__link">Reviews</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Diensten</h4>
+          <a href="diensten.html#google-ads" class="footer__link">Google Ads</a>
+          <a href="diensten.html#meta-ads" class="footer__link">Meta Ads</a>
+          <a href="diensten.html#creatives" class="footer__link">Creatives</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Contact</h4>
+          <a href="mailto:hello@groeispeurt.nl" class="footer__link">hello@groeispeurt.nl</a>
+          <a href="tel:+31201234567" class="footer__link">+31 20 123 45 67</a>
+          <span class="footer__link footer__link--static">Amsterdam, NL</span>
+        </div>
+      </div>
+
+      <div class="footer__cta-box">
+        <h4 class="footer__cta-title">Klaar voor de volgende stap?</h4>
+        <a href="#contact" class="btn btn--primary">Start jouw project <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Groeispeurt. Alle rechten voorbehouden.</p>
+      <div class="footer__legal">
+        <a href="#">Privacy</a>
+        <a href="#">Voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
