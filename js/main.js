@@ -174,6 +174,29 @@
     }
   }
 
+  /* ---------- Intake-formulier → WhatsApp ---------- */
+  const WHATSAPP_NUMBER = "31647054098";
+  const intakeForm = document.getElementById("intakeForm");
+  if (intakeForm) {
+    intakeForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const naam = this.querySelector("[name='naam']").value.trim();
+      const bedrijf = this.querySelector("[name='bedrijf']").value.trim();
+      const status = this.querySelector("[name='status']:checked")?.labels[0]?.textContent.trim() || "";
+      const diensten = Array.from(this.querySelectorAll("[name='diensten']:checked"))
+        .map((el) => el.labels[0]?.textContent.trim())
+        .filter(Boolean);
+      const regels = [
+        `Hoi Groeispeurt! Ik ben ${naam}${bedrijf ? ` van ${bedrijf}` : ""}.`,
+        status ? `Status: ${status}.` : "",
+        diensten.length ? `Interesse in: ${diensten.join(", ")}.` : "",
+        "Ik hoor graag de mogelijkheden!",
+      ].filter(Boolean);
+      const bericht = encodeURIComponent(regels.join(" "));
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${bericht}`, "_blank", "noopener");
+    });
+  }
+
   /* ---------- Cursor-lens (speuren) op donkere secties ---------- */
   document.querySelectorAll(".spotlight").forEach((el) => {
     el.addEventListener("pointermove", (e) => {
