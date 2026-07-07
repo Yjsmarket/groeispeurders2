@@ -238,6 +238,8 @@ main { counter-reset: dossier; }
 
 .logo { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--text-dark); }
 .logo__mark { color: var(--emerald); flex-shrink: 0; }
+.logo__img { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
+.logo__img--lg { width: 56px; height: 56px; }
 .logo__dot { color: var(--emerald); }
 .logo--light { color: var(--text-light); }
 
@@ -417,11 +419,42 @@ main { counter-reset: dossier; }
    =================================================================== */
 .logos { padding: 56px 0; background: var(--off-white); border-bottom: 1px solid var(--border-light); }
 .logos__title { text-align: center; font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 36px; }
-.marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-.marquee__track { display: flex; gap: 64px; width: max-content; animation: marquee 32s linear infinite; }
-.brand { font-family: var(--font-display); font-weight: 600; font-size: 26px; color: #B9B3AB; white-space: nowrap; transition: color .25s; }
-.brand:hover { color: var(--emerald); }
-@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Spoorlijn-rij: statisch, stops verbonden met gestreepte lijn */
+.trailband { display: flex; align-items: center; flex-wrap: wrap; row-gap: 18px; justify-content: center; }
+.trailband__seg {
+  flex: 1 1 24px; min-width: 16px; max-width: 72px; height: 2px;
+  background-image: repeating-linear-gradient(90deg, var(--border-light) 0 2px, transparent 2px 5px);
+}
+.trailband__stop {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  cursor: default;
+  outline: none;
+}
+.trailband__stop:focus-visible { box-shadow: 0 0 0 2px var(--emerald); }
+.trailband__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--off-white);
+  border: 2px solid var(--emerald);
+  flex-shrink: 0;
+  transition: background .25s ease;
+}
+.trailband__name { font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--text-muted); transition: color .25s ease; white-space: nowrap; }
+.trailband__stat {
+  font-size: 13.5px; font-weight: 600; color: var(--emerald); white-space: nowrap;
+  max-width: 0; overflow: hidden;
+  clip-path: circle(0% at 0 50%);
+  transition: max-width .45s ease, clip-path .45s ease;
+}
+.trailband__stop:hover .trailband__stat,
+.trailband__stop:focus-visible .trailband__stat { max-width: 220px; clip-path: circle(150% at 0 50%); }
+.trailband__stop:hover .trailband__name,
+.trailband__stop:focus-visible .trailband__name { color: var(--text-dark); }
+.trailband__stop:hover .trailband__dot,
+.trailband__stop:focus-visible .trailband__dot { background: var(--emerald); }
 
 /* ===================================================================
    DIENSTEN
@@ -435,117 +468,47 @@ main { counter-reset: dossier; }
   border: 1px solid var(--border-light);
   border-radius: 20px;
   overflow: hidden;
+  padding: 24px 26px 28px;
   transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-emerald); border-color: rgba(10,110,79,0.25); }
 
-/* Geanimeerd illustratie-gebied */
-.service-card__visual {
-  position: relative;
-  min-height: 220px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(120% 100% at 50% 0%, #ffffff 0%, #F7F4EF 100%);
-  border-bottom: 1px solid var(--border-light);
+/* Etappenummer + coördinaat-tag */
+.service-card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.service-card__num { font-family: var(--font-display); font-weight: 400; font-size: 46px; line-height: 1; color: var(--emerald); opacity: .32; letter-spacing: -0.02em; }
+.service-card__tag {
+  font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border-light); border-radius: var(--radius-pill);
+  padding: 5px 12px; background: var(--off-white);
+  white-space: nowrap; margin-top: 8px;
 }
 
-.service-card__body { padding: 24px 26px 28px; }
-.service-card__badge {
-  width: 50px; height: 50px;
-  display: grid; place-items: center;
-  background: var(--emerald);
-  border-radius: 14px;
-  font-size: 22px;
-  margin-bottom: 16px;
-  box-shadow: 0 8px 20px rgba(10,110,79,0.25);
+/* Spoorlijn met vergrootglas-reveal */
+.service-card__trail { position: relative; margin: 12px 0 14px; }
+.service-card__trail svg { width: 100%; height: auto; display: block; }
+.sline { stroke: var(--emerald-2); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; transition: stroke-dashoffset 1.4s ease .25s; }
+.service-card.visible .sline { stroke-dashoffset: 0; }
+.sline__end { fill: var(--emerald); opacity: 0; transition: opacity .4s ease 1.4s; }
+.service-card.visible .sline__end { opacity: 1; }
+
+.lens {
+  position: absolute; right: 0; top: 0;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12.5px; font-weight: 700; color: var(--emerald);
+  background: var(--off-white);
+  border: 1px solid var(--border-light); border-radius: var(--radius-pill);
+  padding: 5px 12px;
+  box-shadow: var(--shadow-sm);
+  clip-path: circle(0% at 13px 50%);
+  transition: clip-path .45s ease;
 }
+.lens__ring { flex-shrink: 0; }
+.service-card:hover .lens,
+.service-card:focus-within .lens { clip-path: circle(150% at 13px 50%); }
+
 .service-card__title { font-family: var(--font-display); font-weight: 600; font-size: 23px; margin-bottom: 8px; letter-spacing: -0.01em; }
 .service-card__desc { color: var(--text-muted); font-size: 15.5px; margin-bottom: 18px; }
-
-/* ---------- Card 1 · Google Ads — animerend dashboard ---------- */
-.gads { width: 100%; padding: 20px 22px; display: flex; flex-direction: column; gap: 16px; }
-.gads__stats { display: flex; gap: 10px; }
-.ministat { flex: 1; background: #fff; border: 1px solid var(--border-light); border-radius: 10px; padding: 9px 12px; box-shadow: var(--shadow-sm); }
-.ministat__label { display: block; font-size: 10px; font-weight: 700; letter-spacing: .08em; color: var(--text-muted); }
-.ministat__val { display: flex; align-items: center; gap: 4px; font-family: var(--font-display); font-weight: 600; font-size: 19px; color: var(--text-dark); }
-.ministat .trend { color: var(--emerald); font-size: 10px; font-style: normal; }
-.gads__chart { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
-.bars { display: flex; align-items: flex-end; gap: 7px; height: 72px; flex: 1; }
-.bar { width: 12px; height: 0; background: #ddd8d0; border-radius: 4px 4px 0 0; }
-.bar--accent { background: var(--emerald); }
-.bars.in .bar { animation: bar-grow .8s cubic-bezier(.22,1,.36,1) forwards; animation-delay: var(--d); }
-@keyframes bar-grow { from { height: 0; } to { height: var(--h); } }
-.donut { position: relative; width: 70px; height: 70px; border-radius: 50%; background: conic-gradient(#e8e8e8 0% 100%); flex-shrink: 0; }
-.donut::after { content: ""; position: absolute; inset: 9px; background: #fff; border-radius: 50%; }
-.donut__num { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 700; font-size: 14px; color: var(--emerald); z-index: 1; }
-
-/* ---------- Card 2 · Meta Ads — node-graph ---------- */
-.netgraph { width: 100%; height: 220px; }
-.nline { stroke-dasharray: 100; stroke-dashoffset: 100; animation: ndraw .9s ease forwards var(--d), nflicker 3s ease-in-out infinite calc(var(--d) + 1s); }
-@keyframes ndraw { to { stroke-dashoffset: 0; } }
-@keyframes nflicker { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
-.nnode circle { transform-box: fill-box; transform-origin: center; animation: npulse 3s ease-in-out infinite; animation-delay: var(--pd, 0s); }
-@keyframes npulse { 0%, 100% { r: 22px; } 50% { r: 24px; } }
-
-/* ---------- Card 3 · Creatives — telefoon + hartjes ---------- */
-.creatives { position: relative; width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; }
-.phone { position: relative; width: 122px; height: 198px; background: #0d0d10; border-radius: 26px; padding: 8px; box-shadow: 0 16px 36px rgba(11,18,32,.35), inset 0 0 0 2px #23232a; }
-.phone__notch { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 40px; height: 6px; background: #23232a; border-radius: 5px; z-index: 2; }
-.phone__screen { position: relative; width: 100%; height: 100%; border-radius: 19px; overflow: hidden; background: linear-gradient(160deg, #1f2a44 0%, #0A6E4F 130%); display: flex; align-items: center; justify-content: center; }
-.phone__play { width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,.92); color: var(--emerald); display: grid; place-items: center; font-size: 15px; padding-left: 3px; box-shadow: 0 6px 16px rgba(0,0,0,.25); }
-.phone__bar { position: absolute; left: 9px; right: 9px; bottom: 9px; display: flex; align-items: center; gap: 6px; }
-.phone__avatar { width: 16px; height: 16px; border-radius: 50%; background: linear-gradient(135deg, #EDD9A3, #0A6E4F); flex-shrink: 0; }
-.phone__user { font-size: 9px; font-weight: 600; color: #fff; }
-.phone__heart { margin-left: auto; color: #ff5a7a; font-size: 12px; }
-.fheart { position: absolute; bottom: 26px; left: calc(50% - 61px + var(--x)); color: #ff5a7a; font-size: 16px; opacity: 0; animation: float-heart 2.6s ease-in-out infinite; animation-delay: var(--delay); }
-@keyframes float-heart {
-  0%   { opacity: 0; transform: translateY(0) scale(.8); }
-  15%  { opacity: 1; }
-  50%  { opacity: 1; }
-  100% { opacity: 0; transform: translateY(-86px) scale(1.15); }
-}
-
-/* ---------- Card 4 · Websites — orbit ---------- */
-.orbit { position: relative; width: 216px; height: 216px; }
-.orbit__path { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px dashed #d8d3cc; border-radius: 50%; }
-.orbit__path--outer { width: 176px; height: 176px; }
-.orbit__path--inner { width: 112px; height: 112px; }
-.orbit__center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border-radius: 50%; background: #fff; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2; }
-.orbit__center strong { font-family: var(--font-display); font-size: 16px; color: var(--text-dark); line-height: 1; }
-.orbit__center span { font-size: 8px; color: var(--text-muted); letter-spacing: .05em; }
-.orbit__track { position: absolute; inset: 0; animation: orbit-rotate 18s linear infinite; }
-.orbit__arm { position: absolute; top: 50%; left: 50%; width: 0; height: 0; transform: rotate(var(--angle)) translateX(88px) rotate(calc(-1 * var(--angle))); }
-.orbit__bubble { position: absolute; top: -16px; left: -16px; width: 32px; height: 32px; border-radius: 50%; background: var(--c); color: var(--t); display: grid; place-items: center; font-weight: 700; font-size: 14px; box-shadow: var(--shadow-sm); animation: orbit-counter 18s linear infinite; }
-@keyframes orbit-rotate { from { transform: rotate(0); } to { transform: rotate(360deg); } }
-@keyframes orbit-counter { from { transform: rotate(0); } to { transform: rotate(-360deg); } }
-
-/* ---------- Card 5 · Conversie — notificatie-stroom ---------- */
-.notif-stack { position: relative; width: 88%; max-width: 300px; height: 220px; }
-.notif {
-  position: absolute; left: 0; right: 0; top: 0;
-  display: flex; align-items: center; gap: 10px;
-  background: #fff; border: 1px solid var(--border-light); border-radius: 12px;
-  padding: 11px 13px; box-shadow: var(--shadow-sm);
-  transition: top .45s ease, opacity .45s ease, transform .45s ease;
-}
-.notif__icon { width: 30px; height: 30px; border-radius: 8px; background: #F7F4EF; display: grid; place-items: center; font-size: 15px; flex-shrink: 0; }
-.notif__txt { display: flex; flex-direction: column; line-height: 1.25; }
-.notif__label { font-size: 9px; font-weight: 700; letter-spacing: .06em; color: var(--text-muted); }
-.notif__amount { font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--text-dark); }
-.notif__time { margin-left: auto; font-size: 11px; color: var(--text-muted); }
-
-/* ---------- Card 6 · SEO & Performance — gauge ---------- */
-.gaugewrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.gauge { position: relative; width: 200px; height: 130px; }
-.gauge__svg { width: 200px; height: 120px; display: block; }
-.gauge__track { fill: none; stroke: #e3ded7; stroke-width: 16; stroke-linecap: round; }
-.gauge__fill { fill: none; stroke: var(--emerald); stroke-width: 16; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; }
-.gauge__num { position: absolute; left: 0; right: 0; top: 60px; text-align: center; font-family: var(--font-display); font-weight: 600; font-size: 38px; color: var(--text-dark); line-height: 1; }
-.gauge__label { position: absolute; left: 0; right: 0; top: 104px; text-align: center; font-size: 11px; color: var(--text-muted); letter-spacing: .04em; }
-.gauge__chips { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; }
-.gchip { font-size: 10px; font-weight: 600; color: var(--emerald); background: #fff; border: 1px solid var(--border-light); border-radius: 999px; padding: 3px 9px; }
 
 /* ===================================================================
    CASES
@@ -769,6 +732,11 @@ main { counter-reset: dossier; }
 @media (max-width: 768px) {
   body { font-size: 16px; }
   .cards-grid { grid-template-columns: 1fr; }
+  /* geen hover op touch: lens en klantresultaten standaard zichtbaar */
+  .lens { clip-path: none; }
+  .trailband__stat { max-width: 220px; clip-path: none; }
+  .trailband__seg { display: none; }
+  .trailband { gap: 6px 14px; }
   .cases-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
   .price-card--featured { transform: none; }
@@ -922,5 +890,6 @@ main { counter-reset: dossier; }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
-  .marquee__track { animation: none; }
+  .sline { stroke-dashoffset: 0; }
+  .sline__end { opacity: 1; }
 }

@@ -150,58 +150,8 @@
     });
   });
 
-  /* ---------- Diensten: geanimeerde widgets ---------- */
+  /* ---------- Hero-proof teller (0 → 50) ---------- */
   const reduceMotionPref = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // Notificatie-stroom (Card 5)
-  const notifStack = document.getElementById("notifStack");
-  if (notifStack) {
-    const ROW = 58;
-    const placeAll = () => {
-      Array.from(notifStack.children).forEach((c, i) => {
-        c.style.transition = "top .45s ease, opacity .45s ease, transform .45s ease";
-        c.style.top = i * ROW + "px";
-        c.style.opacity = "1";
-        c.style.transform = "";
-        c.style.zIndex = String(10 - i);
-      });
-    };
-    // initiële plaatsing zonder animatie
-    Array.from(notifStack.children).forEach((c, i) => {
-      c.style.top = i * ROW + "px";
-      c.style.zIndex = String(10 - i);
-    });
-
-    if (!reduceMotionPref) {
-      setInterval(() => {
-        const top = notifStack.firstElementChild;
-        if (!top) return;
-        // bovenste kaartje omhoog + vervagen
-        top.style.transition = "transform .4s ease, opacity .4s ease";
-        top.style.transform = "translateY(-32px)";
-        top.style.opacity = "0";
-        setTimeout(() => {
-          // naar onderkant van de stapel, verborgen, zonder animatie
-          notifStack.appendChild(top);
-          const last = notifStack.children.length - 1;
-          top.style.transition = "none";
-          top.style.transform = "";
-          top.style.top = last * ROW + "px";
-          top.style.opacity = "0";
-          // reflow forceren, daarna alles naar de eindpositie animeren
-          void notifStack.offsetWidth;
-          placeAll();
-        }, 420);
-      }, 2500);
-    }
-  }
-
-  // Bars (Card 1), donut (Card 1) en gauge (Card 6) via IntersectionObserver
-  const setDonut = (el, num, val) => {
-    el.style.background =
-      "conic-gradient(#0A6E4F 0% " + val + "%, #e8e8e8 " + val + "% 100%)";
-    num.textContent = Math.round(val) + "%";
-  };
 
   const countUp = (duration, onFrame) => {
     const start = performance.now();
@@ -214,32 +164,6 @@
     requestAnimationFrame(step);
   };
 
-  const runWidget = (el) => {
-    const type = el.getAttribute("data-anim");
-    if (type === "bars") {
-      el.classList.add("in");
-    } else if (type === "donut") {
-      const target = parseFloat(el.getAttribute("data-target")) || 0;
-      const num = el.querySelector(".donut__num");
-      if (reduceMotionPref) return setDonut(el, num, target);
-      countUp(1100, (e) => setDonut(el, num, target * e));
-    } else if (type === "gauge") {
-      const target = parseFloat(el.getAttribute("data-target")) || 0;
-      const num = el.closest(".gauge").querySelector("[data-gauge-num]");
-      if (reduceMotionPref) {
-        el.style.strokeDashoffset = String(100 - target);
-        if (num) num.textContent = String(target);
-        return;
-      }
-      countUp(1400, (e) => {
-        const val = target * e;
-        el.style.strokeDashoffset = String(100 - val);
-        if (num) num.textContent = String(Math.round(val));
-      });
-    }
-  };
-
-  // Hero-proof teller (0 → 50)
   const proofNum = document.querySelector(".hero__proof-num[data-count]");
   if (proofNum) {
     const target = parseInt(proofNum.getAttribute("data-count"), 10) || 0;
@@ -247,25 +171,6 @@
       proofNum.textContent = String(target);
     } else {
       countUp(1500, (e) => { proofNum.textContent = String(Math.round(target * e)); });
-    }
-  }
-
-  const widgets = document.querySelectorAll("[data-anim]");
-  if (widgets.length) {
-    if ("IntersectionObserver" in window) {
-      const wObs = new IntersectionObserver(
-        (entries, obs) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            runWidget(entry.target);
-            obs.unobserve(entry.target);
-          });
-        },
-        { threshold: 0.4 }
-      );
-      widgets.forEach((el) => wObs.observe(el));
-    } else {
-      widgets.forEach(runWidget);
     }
   }
 
