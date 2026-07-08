@@ -839,6 +839,8 @@ main { counter-reset: dossier; }
 .svc__list li::before { content: "✓"; color: var(--emerald); font-weight: 700; flex-shrink: 0; }
 .svc__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
 .svc__ghost { position: absolute; top: 24px; right: 5%; font-family: var(--font-display); font-weight: 600; font-size: clamp(120px, 16vw, 220px); line-height: 1; color: var(--emerald); opacity: 0.05; z-index: 0; pointer-events: none; letter-spacing: -0.04em; }
+.svc-sub { margin: 52px 0 20px; }
+.dossier-card__features { margin-top: 18px; margin-bottom: 0; }
 
 /* Media — algemeen */
 .svc__media { display: flex; justify-content: center; }
