@@ -38,20 +38,31 @@
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            // lichte stagger binnen dezelfde viewport-batch
-            setTimeout(() => entry.target.classList.add("visible"), i * 70);
-            io.unobserve(entry.target);
-          }
+        // stagger telt alleen intersecterende elementen en is gecapt,
+        // zodat de vertraging bij snel scrollen nooit oploopt
+        let batch = 0;
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const delay = Math.min(batch * 60, 250);
+          batch += 1;
+          setTimeout(() => entry.target.classList.add("visible"), delay);
+          io.unobserve(entry.target);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.05 }
     );
     reveals.forEach((el) => io.observe(el));
   } else {
     reveals.forEach((el) => el.classList.add("visible"));
   }
+
+  // Safety-net: 1,5s na load wordt alles wat nog geen .visible heeft
+  // alsnog zichtbaar gemaakt, ongeacht scrollpositie of timing-edge-cases
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.querySelectorAll(".reveal:not(.visible)").forEach((el) => el.classList.add("visible"));
+    }, 1500);
+  });
 
   /* ---------- Reviews carousel ---------- */
   const track = document.getElementById("carouselTrack");
