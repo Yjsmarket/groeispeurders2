@@ -185,6 +185,39 @@
     }
   }
 
+  /* ---------- Resultaten-carousel (homepage) ---------- */
+  const resultsCarousel = document.getElementById("resultsCarousel");
+  if (resultsCarousel) {
+    const slides = Array.from(resultsCarousel.querySelectorAll(".result"));
+    const dotsWrap = document.getElementById("resultsDots");
+    let rIdx = 0;
+    let rTimer = null;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement("button");
+      dot.className = "results__dot" + (i === 0 ? " active" : "");
+      dot.setAttribute("aria-label", "Ga naar resultaat " + (i + 1));
+      dot.addEventListener("click", () => { showResult(i); restartAuto(); });
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    const showResult = (i) => {
+      rIdx = i;
+      slides.forEach((s, j) => s.classList.toggle("is-active", j === i));
+      dots.forEach((d, j) => d.classList.toggle("active", j === i));
+    };
+    const nextResult = () => showResult((rIdx + 1) % slides.length);
+
+    const startAuto = () => {
+      if (!reduceMotionPref) rTimer = setInterval(nextResult, 5000);
+    };
+    const restartAuto = () => { clearInterval(rTimer); startAuto(); };
+    resultsCarousel.addEventListener("mouseenter", () => clearInterval(rTimer));
+    resultsCarousel.addEventListener("mouseleave", startAuto);
+    startAuto();
+  }
+
   /* ---------- Intake-formulier → WhatsApp ---------- */
   const WHATSAPP_NUMBER = "31647054098";
   const intakeForm = document.getElementById("intakeForm");
