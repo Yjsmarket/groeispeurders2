@@ -617,12 +617,10 @@ main { counter-reset: dossier; }
 .price-card__name { font-family: var(--font-display); font-weight: 600; font-size: 26px; margin-bottom: 8px; }
 .price-card__desc { font-size: 15.5px; color: var(--text-muted); margin-bottom: 16px; }
 .price-card--featured .price-card__desc { color: var(--text-cream); opacity: 0.9; }
-.price-card__price { display: block; font-family: var(--font-display); font-weight: 600; font-size: 24px; color: var(--text-dark); margin-bottom: 12px; line-height: 1.25; }
+.price-card__price { display: block; font-family: var(--font-display); font-weight: 600; font-size: 24px; color: var(--text-dark); margin-bottom: 24px; line-height: 1.25; }
 .price-card__price small { display: block; font-family: var(--font-body); font-weight: 500; font-size: 13px; color: var(--text-muted); }
 .price-card--featured .price-card__price { color: #fff; }
 .price-card--featured .price-card__price small { color: var(--text-cream); opacity: .85; }
-.price-card__time { display: inline-block; padding: 5px 14px; border: 1px solid var(--border-light); border-radius: var(--radius-pill); font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 24px; }
-.price-card--featured .price-card__time { border-color: rgba(255,255,255,0.3); color: var(--text-cream); }
 .price-card__features { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
 .price-card__features li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; }
 .check { color: var(--emerald); font-weight: 700; flex-shrink: 0; }
