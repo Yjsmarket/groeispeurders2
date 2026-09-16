@@ -12,7 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="icon" type="image/png" href="/img/logo.png" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" href="/img/favicon-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
 
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
@@ -30,13 +32,130 @@
   <meta name="twitter:description" content="Groeispeurt, digitaal bureau voor strategie, design en development die jouw merk laat groeien." />
   <meta name="twitter:image" content="https://groeispeurders.nl/img/og-image.jpg" />
   <link rel="canonical" href="https://groeispeurders.nl/" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://groeispeurders.nl/#organisatie",
+      "name": "Groeispeurt",
+      "url": "https://groeispeurders.nl/",
+      "logo": "https://groeispeurders.nl/img/logo-256.png",
+      "image": "https://groeispeurders.nl/img/og-image.jpg",
+      "email": "info@groeispeurt.nl",
+      "telephone": "+31647054098",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jarmuiden 27A",
+        "postalCode": "1046 AC",
+        "addressLocality": "Amsterdam",
+        "addressCountry": "NL"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "KVK",
+        "value": "92184731"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Nederland"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://groeispeurders.nl/#website",
+      "url": "https://groeispeurders.nl/",
+      "name": "Groeispeurt",
+      "inLanguage": "nl-NL",
+      "publisher": {
+        "@id": "https://groeispeurders.nl/#organisatie"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://groeispeurders.nl/#faq",
+      "url": "https://groeispeurders.nl/",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hoe verloopt een traject bij Groeispeurt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We werken in vier fases: ontdekken, strategie, bouwen en live gaan. Je hebt één vast aanspreekpunt en korte feedbackrondes onderweg."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat kost een website ongeveer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dat hangt af van omvang en ambitie. Onze pakketten starten compact en groeien mee. In een kennismaking geven we snel een eerlijke indicatie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat is de gemiddelde doorlooptijd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gemiddeld 4 tot 6 weken, afhankelijk van de complexiteit en hoe snel content en feedback beschikbaar zijn."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoeveel revisierondes zijn inbegrepen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standaard plannen we twee feedbackrondes per fase in. We sturen liever vaak en klein bij dan in één grote eindronde."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bieden jullie onderhoud na livegang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. We bieden onderhoudspakketten voor updates, beveiliging en doorlopende optimalisatie, zodat je site scherp blijft."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan ik de website later zelf beheren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zeker. We bouwen met een gebruiksvriendelijk CMS en leveren een korte uitleg op, zodat je zelf eenvoudig content kunt aanpassen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werken jullie ook met bestaande huisstijlen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jazeker. We respecteren je bestaande merk en scherpen waar nodig aan, of we ontwikkelen een volledig nieuwe identiteit."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
+  <!-- Iconen (Lucide, ISC-licentie), aangeroepen met use en een #i-id -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  </svg>
   <!-- ===================== HEADER ===================== -->
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#hero" class="logo" aria-label="Groeispeurt home">
-        <img src="/img/logo.png" alt="" class="logo__img" width="44" height="44" />
+        <img src="/img/logo-88.webp" srcset="/img/logo-88.webp 2x, /img/logo-132.webp 3x" alt="" class="logo__img" width="44" height="44" />
         <span class="logo__text">Groeispeurt<span class="logo__dot">.</span></span>
       </a>
 
@@ -143,7 +262,7 @@
                 <line x1="0" y1="165" x2="360" y2="165"/>
               </g>
               <path class="trail__area" d="M14 196 C 78 188, 96 150, 150 138 S 250 96, 300 60 L 346 32 L 346 210 L 14 210 Z" fill="url(#trailFill)"/>
-              <path class="trail__line" pathLength="100" d="M14 196 C 78 188, 96 150, 150 138 S 250 96, 300 60 L 346 32" fill="none" stroke="#19A06B" stroke-width="2.5" stroke-linecap="round"/>
+              <path class="trail__line" pathLength="100" d="M14 196 C 78 188, 96 150, 150 138 S 250 96, 300 60 L 346 32" fill="none" stroke="#2FD08F" stroke-width="2.5" stroke-linecap="round"/>
               <g class="trail__pins">
                 <circle cx="150" cy="138" r="4"/>
                 <circle cx="300" cy="60" r="4"/>
@@ -481,7 +600,7 @@
           <article class="dossier-card reveal">
             <span class="dossier-card__tag">Dossier · Websites</span>
             <div class="dossier-card__shot dossier-card__shot--img">
-              <img src="/img/case-fixed-ride.jpg" alt="Website van fixed-ride.nl op laptop en telefoon" loading="lazy" />
+              <img src="/img/case-fixed-ride.jpg" alt="Website van fixed-ride.nl op laptop en telefoon" width="1440" height="960" loading="lazy" decoding="async" />
             </div>
             <h3 class="dossier-card__title">fixed-ride.nl</h3>
             <p class="dossier-card__desc">Een van de sites die we voor een klant bouwden: fixed-ride.nl, taxivervoer dat je vooraf vastlegt. Met een boekingsformulier dat direct doorstuurt naar WhatsApp en volledig responsive op mobiel.</p>
@@ -491,7 +610,7 @@
           <article class="dossier-card reveal">
             <span class="dossier-card__tag">Dossier · Websites</span>
             <div class="dossier-card__shot dossier-card__shot--img">
-              <img src="/img/case-emabouw.jpg" alt="Website van emabouw.com op laptop en telefoon" loading="lazy" />
+              <img src="/img/case-emabouw.jpg" alt="Website van emabouw.com op laptop en telefoon" width="1440" height="960" loading="lazy" decoding="async" />
             </div>
             <h3 class="dossier-card__title">emabouw.com</h3>
             <p class="dossier-card__desc">Voor een verbouw- en renovatiebedrijf bouwden we emabouw.com. Met een offerteformulier in twee stappen, een helder projectoverzicht en een uitstraling die past bij het vakwerk.</p>
@@ -529,7 +648,7 @@
 
         <div class="pricing-grid">
           <article class="price-card reveal">
-            <div class="price-card__badge">🌱</div>
+            <div class="price-card__badge"><svg class="icon" aria-hidden="true"><use href="#i-sprout"/></svg></div>
             <h3 class="price-card__name">Starter</h3>
             <p class="price-card__desc">Nog nooit geadverteerd, of begin je binnenkort pas echt? Dit pakket is voor merken die vanaf nul een sterke basis willen: een website die staat, en een helder advies over welke kanalen als eerste iets opleveren voor jouw type bedrijf.</p>
             <span class="price-card__price">Vanaf €750 <small>excl. advertentiekosten</small></span>
@@ -544,7 +663,7 @@
 
           <article class="price-card price-card--featured reveal">
             <span class="price-card__tag">Meest gekozen</span>
-            <div class="price-card__badge price-card__badge--light">🚀</div>
+            <div class="price-card__badge price-card__badge--light"><svg class="icon" aria-hidden="true"><use href="#i-rocket"/></svg></div>
             <h3 class="price-card__name">Groei</h3>
             <p class="price-card__desc">Heb je al creatives, of moet alles nog opgezet worden? De investering hangt af van wat je al hebt en wat je erbij nodig hebt, daarom werken we hier met maatwerk in plaats van één vast bedrag.</p>
             <span class="price-card__price">Prijs op aanvraag <small>afhankelijk van de combinatie diensten</small></span>
@@ -559,7 +678,7 @@
           </article>
 
           <article class="price-card reveal">
-            <div class="price-card__badge">🛠️</div>
+            <div class="price-card__badge"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></div>
             <h3 class="price-card__name">Maatwerk</h3>
             <p class="price-card__desc">Voor bedrijven die verder willen dan een los project: doorlopend social media beheer, meerdere kanalen tegelijk, of een team dat meedraait als verlengstuk van de zaak.</p>
             <span class="price-card__price">In overleg</span>
@@ -641,19 +760,19 @@
 
         <div class="contact-cards">
           <a href="https://wa.me/31647054098?text=Hoi%20Groeispeurt!%20Ik%20wil%20graag%20een%20gratis%20marketing%20scan%20van%20mijn%20bedrijf." target="_blank" rel="noopener" class="contact-card reveal">
-            <span class="contact-card__icon" aria-hidden="true">🔍</span>
+            <span class="contact-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span>
             <h3 class="contact-card__title">Vraag een gratis marketing scan aan</h3>
             <p class="contact-card__desc">We bekijken je huidige website, advertenties en social media, en sturen je binnen twee werkdagen drie concrete verbeterpunten. Gratis en vrijblijvend.</p>
             <span class="link-arrow link-arrow--light">Scan aanvragen <span aria-hidden="true">→</span></span>
           </a>
           <a href="#intake" class="contact-card reveal">
-            <span class="contact-card__icon" aria-hidden="true">📋</span>
+            <span class="contact-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
             <h3 class="contact-card__title">Vertel ons over je bedrijf</h3>
             <p class="contact-card__desc">Beantwoord drie korte vragen, dan weten we precies wat je nodig hebt voordat we appen.</p>
             <span class="link-arrow link-arrow--light">Formulier invullen <span aria-hidden="true">→</span></span>
           </a>
           <a href="https://wa.me/31647054098?text=Hoi%20Groeispeurt!%20Ik%20heb%20een%20vraag%20over%20jullie%20diensten." target="_blank" rel="noopener" class="contact-card reveal">
-            <span class="contact-card__icon" aria-hidden="true">💬</span>
+            <span class="contact-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg></span>
             <h3 class="contact-card__title">Liever meteen appen?</h3>
             <p class="contact-card__desc">Geen formulier, geen wachttijd. Stuur ons nu een WhatsApp-bericht.</p>
             <span class="link-arrow link-arrow--light">Open WhatsApp <span aria-hidden="true">→</span></span>
@@ -661,9 +780,9 @@
         </div>
 
         <div class="contact__info reveal">
-          <a href="tel:+31647054098" class="contact__info-item">📞 +31 6 47 05 40 98</a>
-          <a href="mailto:info@groeispeurt.nl" class="contact__info-item">✉️ info@groeispeurt.nl</a>
-          <a href="https://wa.me/31647054098?text=Hoi%20Groeispeurt!%20Ik%20heb%20een%20vraag%20over%20jullie%20diensten." target="_blank" rel="noopener" class="contact__info-item">💬 WhatsApp</a>
+          <a href="tel:+31647054098" class="contact__info-item"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> +31 6 47 05 40 98</a>
+          <a href="mailto:info@groeispeurt.nl" class="contact__info-item"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> info@groeispeurt.nl</a>
+          <a href="https://wa.me/31647054098?text=Hoi%20Groeispeurt!%20Ik%20heb%20een%20vraag%20over%20jullie%20diensten." target="_blank" rel="noopener" class="contact__info-item"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg> WhatsApp</a>
         </div>
       </div>
     </section>
@@ -737,7 +856,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#hero" class="logo logo--light">
-          <img src="/img/logo.png" alt="" class="logo__img logo__img--lg" width="56" height="56" />
+          <img src="/img/logo-112.webp" srcset="/img/logo-112.webp 2x, /img/logo-168.webp 3x" alt="" class="logo__img logo__img--lg" width="56" height="56" loading="lazy" decoding="async" />
           <span class="logo__text">Groeispeurt<span class="logo__dot">.</span></span>
         </a>
         <p class="footer__tagline">Digitale strategie en design die jouw merk laat groeien. Rustig, doordacht en meetbaar.</p>
