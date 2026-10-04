@@ -1,4 +1,4 @@
-/* Groeispeurt homepage (ontwerp v3). Alleen geladen door index.html. */
+/* Groeispeurt: gedeelde stijl (tokens, nav, knoppen, bento, tijdlijn, FAQ, slot, footer). Homepage en dienstpagina's in de nieuwe stijl. */
 /* Layout: donkere radar-banner als afgeronde kaart bovenaan, daaronder lichte, luchtige secties met bento-vlakken.
    Eén felle kleur (signaalgroen) als licht dat door de pagina loopt: radar, markeerstift, knoppen, tijdlijn. */
 :root {
@@ -83,6 +83,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .nav__links { display: flex; gap: 4px; margin-inline: auto; }
 .nav__links a { padding: 10px 14px; border-radius: var(--r-pill); font-weight: 600; font-size: 14.5px; color: #333C4B; }
 .nav__links a:hover { background: var(--mist); }
+.nav__links a[aria-current="page"] { background: var(--mist); color: var(--text); }
 .nav__cta { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px; border-radius: var(--r-pill); background: var(--ink); color: #fff; font-weight: 700; font-size: 14.5px; }
 .nav__cta svg { width: 18px; height: 18px; color: var(--signal); }
 
