@@ -1,0 +1,30 @@
+/* Snapchat & TikTok Ads: paginaspecifiek. */
+/* ---------- Snapchat en TikTok Ads: paginaspecifiek (voorstel: css/snapchat-tiktok-ads.css) ---------- */
+
+.vis--phone { width: min(320px, 100%); }
+.story { position: relative; border-radius: 40px; padding: 11px; background: #1A2333; box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.07); }
+.story__screen { position: relative; height: 560px; border-radius: 30px; overflow: hidden; background: #0E1520; }
+.story__bars { position: absolute; z-index: 3; top: 12px; left: 12px; right: 12px; display: flex; gap: 4px; }
+.story__bars i { flex: 1; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.25); overflow: hidden; }
+.story__bars i::after { content: ""; display: block; height: 100%; width: 100%; background: #fff; transform: scaleX(0); transform-origin: left; animation: bar 9s linear infinite; }
+.story__bars i:nth-child(2)::after { animation-name: bar2; } .story__bars i:nth-child(3)::after { animation-name: bar3; }
+@keyframes bar { 0% { transform: scaleX(0); } 30%, 100% { transform: scaleX(1); } }
+@keyframes bar2 { 0%, 33% { transform: scaleX(0); } 63%, 100% { transform: scaleX(1); } }
+@keyframes bar3 { 0%, 66% { transform: scaleX(0); } 96%, 100% { transform: scaleX(1); } }
+.story__track { height: 300%; display: grid; grid-template-rows: repeat(3, 1fr); animation: swipe 9s cubic-bezier(.7,0,.2,1) infinite; }
+@keyframes swipe { 0%, 30% { transform: translateY(0); } 33%, 63% { transform: translateY(-33.333%); } 66%, 96% { transform: translateY(-66.666%); } 100% { transform: translateY(0); } }
+.slide { position: relative; display: grid; align-content: end; gap: 10px; padding: 22px 18px 26px; }
+.slide--1 { background: linear-gradient(180deg, #24324C, #141E30); }
+.slide--2 { background: radial-gradient(90% 70% at 40% 30%, #1D6B50, #0C211D); box-shadow: inset 0 0 0 2px var(--signal); }
+.slide--3 { background: linear-gradient(180deg, #2B2340, #151226); }
+.slide .sk { background: rgba(255,255,255,0.18); }
+.slide small { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.8); }
+.slide strong { font-family: var(--f-display); font-size: 30px; line-height: 1.05; color: #fff; }
+.slide__cta { justify-self: center; display: grid; justify-items: center; gap: 4px; margin-top: 8px; font-size: 13px; font-weight: 700; color: var(--ink); }
+.slide__cta span { padding: 9px 18px; border-radius: var(--r-pill); background: var(--signal); box-shadow: 0 0 24px rgba(61,245,161,0.5); }
+.slide__cta i { width: 14px; height: 14px; border-left: 3px solid #fff; border-top: 3px solid #fff; transform: rotate(45deg); animation: up 1.2s ease-in-out infinite; }
+@keyframes up { 50% { translate: 0 -6px; } }
+.rail { position: absolute; right: 12px; bottom: 120px; display: grid; gap: 14px; }
+.rail i { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.18); }
+@media (max-width: 600px) { .story__screen { height: 316px; } .story { border-radius: 32px; padding: 9px; } .vis--phone { width: min(220px, 100%); } .slide strong { font-size: 21px; } .rail { bottom: 90px; } }
+@media (prefers-reduced-motion: reduce) { .story__track { animation: none; transform: translateY(-33.333%); } .story__bars i::after { animation: none; } .slide__cta i { animation: none; } }

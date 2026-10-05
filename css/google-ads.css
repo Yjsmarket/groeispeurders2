@@ -1,0 +1,20 @@
+/* Google Ads: paginaspecifiek. */
+/* ---------- Google Ads: paginaspecifiek (voorstel: css/google-ads.css) ---------- */
+
+.serp { padding: 18px; display: grid; gap: 12px; }
+.serp__search { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: var(--r-pill); background: #152034; border: 1px solid var(--ink-line); font-size: 15px; color: #fff; min-height: 48px; }
+.serp__search svg { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: var(--on-ink-muted); stroke-width: 2; }
+.caret { width: 2px; height: 18px; background: var(--signal); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.res { display: grid; gap: 6px; padding: 14px; border-radius: 14px; background: #121C2E; transition: box-shadow .5s ease, opacity .5s ease, transform .5s ease; }
+.res .sk:nth-child(2) { width: 80%; } .res .sk:nth-child(3) { width: 60%; }
+.res--ad { opacity: .25; transform: translateY(6px); }
+.serp.is-found .res--ad { opacity: 1; transform: none; background: #13243A; box-shadow: 0 0 0 2px var(--signal), 0 0 30px rgba(61,245,161,0.35); }
+.res--ad small { font-size: 11.5px; font-weight: 700; color: #fff; }
+.res--ad small b { font-weight: 600; color: var(--on-ink-muted); }
+.res--ad strong { font-family: var(--f-display); font-size: 18px; line-height: 1.2; color: var(--signal); }
+.res--ad p { font-size: 13px; color: var(--on-ink); }
+.res__links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.res__links span { padding: 4px 10px; border-radius: var(--r-pill); border: 1px solid var(--ink-line); font-size: 11.5px; color: #fff; }
+@media (max-width: 600px) { .serp { padding: 12px; gap: 8px; } .serp .res:last-child { display: none; } .res { padding: 11px; } .res--ad strong { font-size: 16px; } .res--ad p { display: none; } .vis .serp ~ .chip-float--1 { top: -26px; left: auto; right: 2%; } }
+@media (prefers-reduced-motion: reduce) { .caret { animation: none; } }

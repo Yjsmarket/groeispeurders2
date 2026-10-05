@@ -111,3 +111,4 @@
   .feed, .chip-float { animation: none; }
   .feed-toggle { display: none; }
 }
+.nav__links a.is-active { background: var(--mist); color: var(--text); }

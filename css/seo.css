@@ -1,0 +1,20 @@
+/* SEO: paginaspecifiek. */
+/* ---------- SEO: paginaspecifiek (voorstel: css/seo.css) ---------- */
+
+.seo { display: grid; gap: 12px; padding: 16px; }
+.audit { display: grid; gap: 8px; padding: 14px; border-radius: 14px; background: #121C2E; }
+.audit small { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--on-ink-muted); }
+.audit li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #fff; }
+.audit li::before { content: ""; flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--ink-line); animation: tick 10s ease infinite; }
+.audit li:nth-child(3)::before { animation-delay: .5s; } .audit li:nth-child(4)::before { animation-delay: 1s; } .audit li:nth-child(5)::before { animation-delay: 1.5s; }
+@keyframes tick { 0%, 6% { background: transparent; border-color: var(--ink-line); box-shadow: none; } 10%, 92% { background: var(--signal); border-color: var(--signal); box-shadow: 0 0 10px var(--signal); } 100% { background: transparent; } }
+.ranks { position: relative; display: grid; gap: 6px; height: 232px; }
+.rank { position: absolute; left: 0; right: 0; display: grid; grid-template-columns: 26px 1fr; align-items: center; gap: 10px; height: 34px; padding: 0 12px; border-radius: 10px; background: #121C2E; font-family: var(--f-mono); font-size: 12px; color: var(--on-ink-muted); }
+.rank .sk { height: 8px; }
+.rank--me { z-index: 2; background: #13243A; color: #fff; box-shadow: 0 0 0 2px var(--signal), 0 0 24px rgba(61,245,161,0.35); animation: climb 10s ease infinite; }
+.rank--me span:last-child { font-family: var(--f-body); font-weight: 700; font-size: 13px; }
+@keyframes climb { 0%, 25% { top: 198px; } 55%, 92% { top: 66px; } 100% { top: 198px; } }
+.rank__n::after { content: "7"; animation: num 10s steps(1) infinite; }
+@keyframes num { 0% { content: "7"; } 35% { content: "5"; } 45% { content: "4"; } 55% { content: "3"; } 92% { content: "7"; } }
+@media (max-width: 600px) { .seo { padding: 12px; gap: 8px; } .audit { padding: 11px; gap: 6px; } .audit li { font-size: 13px; } .ranks { height: 200px; } .rank { height: 29px; } }
+@media (prefers-reduced-motion: reduce) { .audit li::before { animation: none; background: var(--signal); border-color: var(--signal); } .rank--me { animation: none; top: 66px; } .rank__n::after { animation: none; content: "3"; } }

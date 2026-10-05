@@ -1,0 +1,14 @@
+/* YouTube Ads: paginaspecifiek. */
+/* ---------- YouTube Ads: paginaspecifiek (voorstel: css/youtube-ads.css) ---------- */
+
+.player { display: grid; }
+.player__video { position: relative; aspect-ratio: 16 / 9; display: grid; place-content: center; text-align: center; padding: 20px; background: radial-gradient(80% 90% at 30% 30%, #1D6B50, #0C1B26 70%); }
+.player__hook { font-family: var(--f-display); font-weight: 700; font-size: clamp(20px, 2.4vw, 28px); line-height: 1.1; color: #fff; text-wrap: balance; }
+.player__hook b { color: var(--signal); }
+.player__tag { position: absolute; left: 12px; bottom: 16px; padding: 4px 9px; border-radius: 6px; background: rgba(0,0,0,0.6); font-size: 11.5px; font-weight: 600; color: #fff; }
+.player__skip { position: absolute; right: 0; bottom: 16px; padding: 10px 14px; background: rgba(0,0,0,0.72); border: 1px solid rgba(255,255,255,0.3); border-right: 0; font-size: 13px; font-weight: 600; color: #fff; transition: background .3s ease, color .3s ease; }
+.player.is-skip .player__skip { background: #fff; color: var(--ink); }
+.player__progress { height: 4px; background: rgba(255,255,255,0.15); }
+.player__progress i { display: block; height: 100%; width: 0; background: var(--signal); box-shadow: 0 0 12px var(--signal); }
+.player__meta { display: grid; grid-template-columns: 36px 1fr; gap: 6px 12px; padding: 14px; }
+.player__meta b { grid-row: span 2; width: 36px; height: 36px; border-radius: 50%; background: #2A3A55; }
